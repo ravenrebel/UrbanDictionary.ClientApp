@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePageComponentComponent } from './components/home-page-component/home-page-component.component';
@@ -8,6 +9,7 @@ import { SignUpComponentComponent } from './components/sign-up-component/sign-up
 import { AddNewWordComponentComponent } from './components/add-new-word-component/add-new-word-component.component';
 import { NotFoundPageComponentComponent } from './components/not-found-page-component/not-found-page-component.component';
 import { WordComponentComponent } from './components/word-component/word-component.component';
+import { AuthorizationComponent } from './components/authorization/authorization.component';
 
 
 
@@ -19,6 +21,7 @@ const routes: Routes = [
   { path: 'signUp', component: SignUpComponentComponent },
   { path: 'addNewWord', component: AddNewWordComponentComponent },
   { path: 'words/getRandomWord', component: RandomWordComponentComponent },
+  { path: 'authorization', component: AuthorizationComponent },
 
   { path: '**', component: NotFoundPageComponentComponent}
 ];
