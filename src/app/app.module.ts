@@ -4,37 +4,41 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponentComponent } from './components/header-component/header-component.component';
-import { FooterComponentComponent } from './components/footer-component/footer-component.component';
-import { HomePageComponentComponent } from './components/home-page-component/home-page-component.component';
-import { SignInComponentComponent } from './components/sign-in-component/sign-in-component.component';
-import { SignUpComponentComponent } from './components/sign-up-component/sign-up-component.component';
-import { AddNewWordComponentComponent } from './components/add-new-word-component/add-new-word-component.component';
-import { TopWordsComponentComponent } from './components/top-words-component/top-words-component.component';
-import { RandomWordComponentComponent } from './components/random-word-component/random-word-component.component';
-import { WordComponentComponent } from './components/word-component/word-component.component';
-import { NotFoundPageComponentComponent } from './components/not-found-page-component/not-found-page-component.component';
-import {WordService} from './service/word.service';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { WordComponent } from './components/word/word.component';
 import { AuthorizationComponent } from './components/authorization/authorization.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GetStartedMainComponent } from './components/get-started-main/get-started-main.component';
+import { AddNewWordMainComponent } from './components/add-new-word-main/add-new-word-main.component';
+import { FooterMainComponent } from './components/footer-main/footer-main.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
+import { SvgComponent } from './components/svg/svg.component';
+import { CheckInComponent } from './components/check-in/check-in.component';
+import { TopWordsComponent } from './components/top-words/top-words.component';
+
+import {WordService} from './service/word.service';
+import { RandomWordComponent } from './components/random-word/random-word.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponentComponent,
-    FooterComponentComponent,
-    HomePageComponentComponent,
-    SignInComponentComponent,
-    SignUpComponentComponent,
-    AddNewWordComponentComponent,
-    TopWordsComponentComponent,
-    RandomWordComponentComponent,
-    WordComponentComponent,
-    NotFoundPageComponentComponent,
-    AuthorizationComponent
+    AuthorizationComponent,
+    GetStartedMainComponent,
+    AddNewWordMainComponent,
+    FooterMainComponent,
+    MainPageComponent,
+    SvgComponent,
+    CheckInComponent,
+    TopWordsComponent,
+    WordComponent,
+    NotFoundPageComponent,
+    RandomWordComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
     WordService
