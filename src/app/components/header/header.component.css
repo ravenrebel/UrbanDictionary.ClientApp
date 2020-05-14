@@ -1,0 +1,17 @@
+.header{
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #00000050;
+}
+.headerInner{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    /* margin: 8px; */
+}
