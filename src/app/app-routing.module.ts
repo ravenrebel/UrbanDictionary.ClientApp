@@ -15,6 +15,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { TopWordsHomeComponent } from './components/top-words-home/top-words-home.component';
 import { MyWordsComponent } from './components/my-words/my-words.component';
 import { AddNewWordFormComponent } from './components/add-new-word-form/add-new-word-form.component';
+import { SearchWordsComponent } from './components/search-words/search-words.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'saved', component: SavedComponent },
   { path: 'myWords', component: MyWordsComponent },
   { path: 'addNewWord', component: AddNewWordFormComponent },
+  { path: 'searchWord', component: SearchWordsComponent },
 
 
 
