@@ -3,31 +3,31 @@
         <div class="headerLogo">Logo</div>
         <nav class="headerNav">
             <div class="headerNavItem">
-                <button [routerLink]="['/addNewWord']" routerLinkActive="router-link-active"  class="headerNavItemAddNewWord btn addNewWord">Створити</button>
+                <button [routerLink]="['/addNewWord']"  class="headerNavItemAddNewWord btn addNewWord">Створити</button>
             </div>
             <div class="headerNavItem">
-                <a [routerLink]="['/saved']" routerLinkActive="router-link-active" class="headerNavItemSaved link saved">Збережені</a>
-                <!-- <a  class="headerNavItemSaved link saved">Збережені</a> -->
+                <a mat-button [routerLink]="['/saved']" class="headerNavItemSaved link saved">Збережені</a>
+                <!-- <a mat-button  class="headerNavItemSaved link saved">Збережені</a> -->
             </div>
             <div class="headerNavItem">
-                <a [routerLink]="['/myWords']" routerLinkActive="router-link-active" class="headerNavItemMyWord link myWord">Мої слова</a>
-                <!-- <a class="headerNavItemMyWord link myWord">Мої слова</a> -->
+                <a mat-button [routerLink]="['/myWords']" class="headerNavItemMyWord link myWord">Мої слова</a>
+                <!-- <a mat-button class="headerNavItemMyWord link myWord">Мої слова</a> -->
             </div>
         </nav>
         <nav class="headerSecondNav">
             <div class="headerSecondNavItem">
-                <a [routerLink]="['/topWords']" routerLinkActive="router-link-active" class="headerSecondNavItemTopTen link">ТОП-10</a>
-                <!-- <a  class="headerSecondNavItemTopTen link">ТОП-10</a> -->
+                <a mat-button [routerLink]="['/topWords']" class="headerSecondNavItemTopTen link">ТОП-10</a>
+                <!-- <a mat-button  class="headerSecondNavItemTopTen link">ТОП-10</a> -->
                 </div>
             <div class="headerSecondNavItem">
-                <a [routerLink]="['/lastAdded']" routerLinkActive="router-link-active" class="headerSecondNavItem link">Нові</a>
-                <!-- <a  class="headerSecondNavItem link">Нові</a> -->
+                <a mat-button [routerLink]="['/lastAdded']" class="headerSecondNavItem link">Нові</a>
+                <!-- <a mat-button  class="headerSecondNavItem link">Нові</a> -->
             </div>
             <div class="headerSecondNavItem">
-                <a [routerLink]="['/randomWord']" routerLinkActive="router-link-active" class="headerSecondNavItem link">Рандомне</a>
-                <!-- <a class="headerSecondNavItem link">Рандомне</a> -->
+                <a mat-button [routerLink]="['/randomWord']" class="headerSecondNavItem link">Рандомне</a>
+                <!-- <a mat-button class="headerSecondNavItem link">Рандомне</a> -->
                 </div>
-            <!-- <div class="headerSecondNavItem"><a [routerLink]="['/tags']" routerLinkActive="router-link-active"  class="headerSecondNavItem link">Теги</a></div> -->
+            <!-- <div class="headerSecondNavItem"><a mat-button [routerLink]="['/tags']"  class="headerSecondNavItem link">Теги</a></div> -->
         </nav>
         <div class="HeaderAuthorizationStatus">Log In</div>
     </div>

@@ -1,7 +1,8 @@
+import { environment } from './../../environments/environment.prod';
+import { GlobalApiService } from './global-api.service';
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
-import { Empty } from '../model/empty';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { WordDTO } from '../model/word-dto';
 
 
@@ -9,10 +10,14 @@ import { WordDTO } from '../model/word-dto';
   providedIn: 'root'
 })
 export class WordService {
-  private url = 'https://urbandictionary20200425161210.azurewebsites.net/api/words';
-  constructor(private http: HttpClient) { }
+  url = environment.appUrl;
+  constructor(private http: HttpClient, private globalApi: GlobalApiService) { }
 
-  getRandom(): Observable<WordDTO[]>{
-    return this.http.get<WordDTO[]>( this.url + '/randomWord');
+  getRandom(): Observable<WordDTO[]> {
+    return this.http.get<WordDTO[]>(this.url + '/randomWord');
+  }
+
+  getWords(serchingItem: string, skipNumber: number): Observable<WordDTO[]> {
+    return this.http.get<WordDTO[]>(this.globalApi.SEARCH_WORDS_URL(serchingItem, skipNumber));
   }
 }

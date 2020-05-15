@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +37,8 @@ import { SavedComponent } from './components/saved/saved.component';
 import { MyWordsComponent } from './components/my-words/my-words.component';
 import { SearchBoxWordsComponent } from './components/search-box-words/search-box-words.component';
 import { SearchBoxWordsSmallComponent } from './components/search-box-words-small/search-box-words-small.component';
+import { SearchWordsComponent } from './components/search-words/search-words.component';
+import { GlobalApiService } from './service/global-api.service';
 
 
 @NgModule({
@@ -64,6 +70,7 @@ import { SearchBoxWordsSmallComponent } from './components/search-box-words-smal
     MyWordsComponent,
     SearchBoxWordsComponent,
     SearchBoxWordsSmallComponent,
+    SearchWordsComponent,
  
   ],
   imports: [
@@ -71,10 +78,14 @@ import { SearchBoxWordsSmallComponent } from './components/search-box-words-smal
     AppRoutingModule,
     MatSidenavModule,
     MatToolbarModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatTableModule,
     BrowserAnimationsModule
   ],
   providers: [
-    WordService
+    WordService,
+    GlobalApiService
   ],
   bootstrap: [AppComponent]
 })
