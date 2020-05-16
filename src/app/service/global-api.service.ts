@@ -1,4 +1,4 @@
-import { environment } from '../../environments/environment';
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 @Injectable()
 
@@ -10,5 +10,9 @@ export class GlobalApiService {
 
     SEARCH_WORDS_URL(serchedItem: string, skipNumber: number) {
         return `${this.WORD_URL}/search?serchedItem=${serchedItem}&skipNumber=${skipNumber}`;
+    }
+
+    GET_WORDSNUMBER_URL(serchedItem: string) {
+        return `${this.WORD_URL}/wordsNumber?serchedItem=${serchedItem}`;
     }
 }
