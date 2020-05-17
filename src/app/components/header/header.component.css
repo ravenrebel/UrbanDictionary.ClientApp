@@ -1,4 +1,4 @@
-.header{
+.header {
     /* position: absolute;
     top: 0;
     left: 0; */
@@ -7,7 +7,8 @@
     height: 100vh;
     background: #212529;
 }
-.headerInner{
+
+.headerInner {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -18,23 +19,33 @@
 
     /* margin: 8px; */
 }
-.headerLogoInner{
+
+.headerLogoInner {
     text-align-last: right;
     display: flex;
     color: #1D809F;
     margin-bottom: 13px;
     /* color: #ECB807; */
 }
-.addNewWord{
+
+.addNewWord {
     display: flex;
     margin-top: 30px;
 }
+
 .btn:hover {
     background-color: #155c74;
     -webkit-transform: scale(1.00);
-            transform: scale(1.00);
-  }
-.link{
-    color: #EAEAEA;
-    font-size: 20px;
+    transform: scale(1.00);
 }
+
+.link {
+    color: #EAEAEA;
+    font-size: 24px;
+    margin: 4px;
+}
+hr{
+    width: 100%;
+background: #000;}
+
+

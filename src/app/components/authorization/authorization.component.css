@@ -1,6 +1,14 @@
 /* No CSS *//*# sourceMappingURL=style.css.map */
 /* @charset "UTF-8"; */
 @import url(https://fonts.googleapis.com/css?family=Oswald|Roboto);
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+}
 .body {
   position: absolute;
   left: 0;
@@ -11,6 +19,7 @@
   background-color: #F1B507;
   overflow: hidden;
 }
+
 
 .table {
   display: table;

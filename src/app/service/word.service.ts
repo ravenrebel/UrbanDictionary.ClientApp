@@ -14,7 +14,7 @@ export class WordService {
   constructor(private http: HttpClient, private globalApi: GlobalApiService) { }
 
   getRandom(): Observable<WordDTO[]> {
-    return this.http.get<WordDTO[]>(this.url + '/randomWord');
+    return this.http.get<WordDTO[]>(this.url + '/words/randomWord');
   }
 
   getWords(serchingItem: string, skipNumber: number): Observable<WordDTO[]> {

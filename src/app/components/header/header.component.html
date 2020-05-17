@@ -2,9 +2,11 @@
     <div class="headerInner">
         <div class="headerLogo">
             <div class="headerLogoInner subtitle">Urban dictionary</div>
-            <app-button-create-new-word [routerLink]="['/addNewWord']" class="headerNavItemAddNewWord"></app-button-create-new-word>
+            <app-button-create-new-word [routerLink]="['/addNewWord']" class="headerNavItemAddNewWord">
+            </app-button-create-new-word>
             <!-- <button [routerLink]="['/addNewWord']" class="headerNavItemAddNewWord btn addNewWord">Створити</button> -->
         </div>
+        <hr>
         <nav class="headerNav">
             <div class="headerNavItem">
             </div>
@@ -15,6 +17,7 @@
                 <a mat-button [routerLink]="['/myWords']" class="headerNavItemMyWord link myWord">Мої слова</a>
             </div>
         </nav>
+        <hr>
         <nav class="headerSecondNav">
             <div class="headerSecondNavItem">
                 <a mat-button [routerLink]="['/topWords']" class="headerSecondNavItemTopTen link">ТОП-10</a>
@@ -28,7 +31,9 @@
             <div class="headerSecondNavItem">
                 <a mat-button [routerLink]="['/randomWord']" class="headerSecondNavItem link">Теги</a>
             </div>
+
         </nav>
-        <a mat-button [routerLink]="['/']" class="headerSecondNavItem link">LogIn</a>
+        <hr>
+        <a mat-button [routerLink]="['/authorization']" class="headerSecondNavItem link">LogIn</a>
     </div>
 </header>
