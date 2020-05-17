@@ -1,5 +1,15 @@
-<form action="" class="addWord">
-    <label for="word">Word <input type="text" name="word" class=""></label>
-    <label for="definition">Definition <textarea name="definition" id="" cols="30" rows="10"></textarea></label>
-    <label for="example">Example <textarea name="example" id="" cols="30" rows="10"></textarea></label>
-</form>
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <app-header></app-header>
+    </mat-sidenav>
+    <mat-sidenav-content class="contentInner">
+        <app-header-top class="cnt"></app-header-top>
+        <form action="" class="addWord cnt">
+            <label for="word">Word <input type="text" name="word" class="" placeholder="Слово"></label>
+            <label for="definition">Definition <textarea name="definition" id="" cols="30" rows="10" placeholder="Пояснення"></textarea></label>
+            <label for="example">Example <textarea name="example" id="" cols="30" rows="10" placeholder="Приклад"></textarea></label>
+        </form>
+        <app-footer class="f"></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>

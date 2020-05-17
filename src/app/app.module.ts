@@ -39,6 +39,7 @@ import { SearchBoxWordsComponent } from './components/search-box-words/search-bo
 import { SearchBoxWordsSmallComponent } from './components/search-box-words-small/search-box-words-small.component';
 import { SearchWordsComponent } from './components/search-words/search-words.component';
 import { GlobalApiService } from './service/global-api.service';
+import { ButtonCreateNewWordComponent } from './components/button-create-new-word/button-create-new-word.component';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { GlobalApiService } from './service/global-api.service';
     SearchBoxWordsComponent,
     SearchBoxWordsSmallComponent,
     SearchWordsComponent,
+    ButtonCreateNewWordComponent,
  
   ],
   imports: [
