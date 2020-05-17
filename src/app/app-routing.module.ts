@@ -16,6 +16,7 @@ import { TopWordsHomeComponent } from './components/top-words-home/top-words-hom
 import { MyWordsComponent } from './components/my-words/my-words.component';
 import { AddNewWordFormComponent } from './components/add-new-word-form/add-new-word-form.component';
 import { SearchWordsComponent } from './components/search-words/search-words.component';
+import { AuthentificationGuard } from './guards/AuthentificationGuard';
 
 
 const routes: Routes = [
@@ -23,9 +24,9 @@ const routes: Routes = [
   { path: 'randomWord', component: RandomWordHomeComponent },
   { path: 'topWords', component: TopWordsHomeComponent },
   { path: 'lastAdded', component: LastAddWordsHomeComponent },
-  { path: 'saved', component: SavedComponent },
-  { path: 'myWords', component: MyWordsComponent },
-  { path: 'addNewWord', component: AddNewWordFormComponent },
+  { path: 'saved', component: SavedComponent, canActivate: [AuthentificationGuard]},
+  { path: 'myWords', component: MyWordsComponent, canActivate: [AuthentificationGuard] },
+  { path: 'addNewWord', component: AddNewWordFormComponent, canActivate: [AuthentificationGuard] },
   { path: 'searchWord', component: SearchWordsComponent },
 
 
