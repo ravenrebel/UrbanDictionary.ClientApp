@@ -22,7 +22,7 @@ import { SvgComponent } from './components/svg/svg.component';
 import { CheckInComponent } from './components/check-in/check-in.component';
 import { TopWordsComponent } from './components/top-words/top-words.component';
 
-import {WordService} from './service/word.service';
+import { WordService } from './service/word.service';
 import { RandomWordComponent } from './components/random-word/random-word.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
@@ -41,10 +41,14 @@ import { SearchBoxWordsSmallComponent } from './components/search-box-words-smal
 import { SearchWordsComponent } from './components/search-words/search-words.component';
 import { GlobalApiService } from './service/global-api.service';
 import { ButtonCreateNewWordComponent } from './components/button-create-new-word/button-create-new-word.component';
-import { FormsModule } from '@angular/forms';
 import { TagListComponent } from './components/tag-list/tag-list.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { ModeratorPageComponent } from './components/moderator-page/moderator-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SignInService } from './service/signIn.service';
+import { CurrentUserService } from './service/current-user.service';
+import { AuthentificationGuard } from './guards/AuthentificationGuard';
 
 
 @NgModule({
@@ -91,13 +95,17 @@ import { ModeratorPageComponent } from './components/moderator-page/moderator-pa
     MatButtonModule,
     MatPaginatorModule,
     MatTableModule,
+    MatFormFieldModule,
     FormsModule,
     MatIconModule,
     BrowserAnimationsModule
   ],
   providers: [
     WordService,
-    GlobalApiService
+    GlobalApiService,
+    SignInService,
+    CurrentUserService,
+    AuthentificationGuard
   ],
   bootstrap: [AppComponent]
 })

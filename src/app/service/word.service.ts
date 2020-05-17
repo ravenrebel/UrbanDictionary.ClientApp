@@ -40,6 +40,7 @@ export class WordService {
   setWords(words: Array<WordDTO>): void {
     this.words.next(words);
   }
+
   unsetWords(): void {
     this.words.next(null);
   }
