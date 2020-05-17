@@ -52,4 +52,7 @@ export class WordService {
   unsetSeachedWord(): void {
     this.searchedWord.next(null);
   }
+  createNewWord(){
+    // return this.http.post<createWordDTO[]>(this.globalApi.SEARCH_WORDS_URL(serchingItem, skipNumber));
+  }
 }
