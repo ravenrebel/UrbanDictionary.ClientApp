@@ -13,9 +13,8 @@ export class RandomWordComponent implements OnInit {
   randomWord: WordDTO;
 
   constructor(
-    private route: ActivatedRoute,
-    private wordService: WordService,
-    private router: Router) { }
+    private wordService: WordService
+  ){};
 
   ngOnInit(): void {
     this.wordService.getRandom().subscribe(word =>
