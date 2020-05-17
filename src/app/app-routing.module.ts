@@ -1,3 +1,5 @@
+import { ModeratorPageComponent } from './components/moderator-page/moderator-page.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { TagListComponent } from './components/tag-list/tag-list.component';
 import { SavedComponent } from './components/saved/saved.component';
 import { LastAddWordsHomeComponent } from './components/last-add-words-home/last-add-words-home.component';
@@ -31,14 +33,13 @@ const routes: Routes = [
   { path: 'addNewWord', component: AddNewWordFormComponent }, //delete this
   { path: 'searchWord', component: SearchWordsComponent },
 
-
-
+  { path: 'admin', component: AdminPageComponent },
+  { path: 'moderator', component: ModeratorPageComponent },
   { path: 'main', component: MainPageComponent },
   { path: 'word', component: WordComponent },
   { path: 'words/getRandomWord', component: RandomWordComponent },
   { path: 'authorization', component: AuthorizationComponent },
   { path: 'tag', component: TagListComponent },
-
 
   { path: '**', component: NotFoundPageComponent}
 ];

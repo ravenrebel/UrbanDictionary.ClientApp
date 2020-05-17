@@ -1,3 +1,4 @@
+import { createWordDTO } from './../model/createWord-dto';
 import { environment } from './../../environments/environment.prod';
 import { GlobalApiService } from './global-api.service';
 import { Injectable } from '@angular/core';
@@ -52,7 +53,8 @@ export class WordService {
   unsetSeachedWord(): void {
     this.searchedWord.next(null);
   }
-  createNewWord(){
-    // return this.http.post<createWordDTO[]>(this.globalApi.SEARCH_WORDS_URL(serchingItem, skipNumber));
+  createNewWord(model:createWordDTO){
+    return this.http.post(this.globalApi.CREATE_WORD_URL, model);
   }
+
 }

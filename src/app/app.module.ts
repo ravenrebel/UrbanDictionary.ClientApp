@@ -98,7 +98,8 @@ import { AuthentificationGuard } from './guards/AuthentificationGuard';
     MatFormFieldModule,
     FormsModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [
     WordService,

@@ -21,6 +21,7 @@
 }
 
 .headerLogoInner {
+    cursor: pointer;
     text-align-last: right;
     display: flex;
     color: #1D809F;
