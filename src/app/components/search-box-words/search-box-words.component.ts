@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { WordService } from 'src/app/service/word.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-search-box-words',
   templateUrl: './search-box-words.component.html',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class SearchBoxWordsComponent {
   word = '';
 
+  
   constructor(private wordService: WordService, private router: Router) { }
 
   search() {

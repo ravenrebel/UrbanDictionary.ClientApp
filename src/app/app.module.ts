@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,6 +41,9 @@ import { SearchBoxWordsSmallComponent } from './components/search-box-words-smal
 import { SearchWordsComponent } from './components/search-words/search-words.component';
 import { GlobalApiService } from './service/global-api.service';
 import { ButtonCreateNewWordComponent } from './components/button-create-new-word/button-create-new-word.component';
+import { TagListComponent } from './components/tag-list/tag-list.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { ModeratorPageComponent } from './components/moderator-page/moderator-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SignInService } from './service/signIn.service';
@@ -78,7 +82,10 @@ import { AuthentificationGuard } from './guards/AuthentificationGuard';
     SearchBoxWordsSmallComponent,
     SearchWordsComponent,
     ButtonCreateNewWordComponent,
-
+    TagListComponent,
+    AdminPageComponent,
+    ModeratorPageComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -90,7 +97,7 @@ import { AuthentificationGuard } from './guards/AuthentificationGuard';
     MatTableModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule,
+    MatIconModule,
     BrowserAnimationsModule
   ],
   providers: [
