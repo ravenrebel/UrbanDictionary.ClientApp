@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { WordService } from 'src/app/service/word.service';
-import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
