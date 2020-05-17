@@ -6,6 +6,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +42,9 @@ import { SearchWordsComponent } from './components/search-words/search-words.com
 import { GlobalApiService } from './service/global-api.service';
 import { ButtonCreateNewWordComponent } from './components/button-create-new-word/button-create-new-word.component';
 import { FormsModule } from '@angular/forms';
+import { TagListComponent } from './components/tag-list/tag-list.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { ModeratorPageComponent } from './components/moderator-page/moderator-page.component';
 
 
 @NgModule({
@@ -74,6 +78,9 @@ import { FormsModule } from '@angular/forms';
     SearchBoxWordsSmallComponent,
     SearchWordsComponent,
     ButtonCreateNewWordComponent,
+    TagListComponent,
+    AdminPageComponent,
+    ModeratorPageComponent,
  
   ],
   imports: [
@@ -85,6 +92,7 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatTableModule,
     FormsModule,
+    MatIconModule,
     BrowserAnimationsModule
   ],
   providers: [

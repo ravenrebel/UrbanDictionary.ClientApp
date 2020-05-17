@@ -1,3 +1,4 @@
+import { TagListComponent } from './components/tag-list/tag-list.component';
 import { SavedComponent } from './components/saved/saved.component';
 import { LastAddWordsHomeComponent } from './components/last-add-words-home/last-add-words-home.component';
 import { RandomWordHomeComponent } from './components/random-word-home/random-word-home.component';
@@ -26,16 +27,18 @@ const routes: Routes = [
   { path: 'lastAdded', component: LastAddWordsHomeComponent },
   { path: 'saved', component: SavedComponent, canActivate: [AuthentificationGuard]},
   { path: 'myWords', component: MyWordsComponent, canActivate: [AuthentificationGuard] },
-  { path: 'addNewWord', component: AddNewWordFormComponent, canActivate: [AuthentificationGuard] },
+  // { path: 'addNewWord', component: AddNewWordFormComponent, canActivate: [AuthentificationGuard] },
+  { path: 'addNewWord', component: AddNewWordFormComponent }, //delete this
   { path: 'searchWord', component: SearchWordsComponent },
 
 
 
   { path: 'main', component: MainPageComponent },
   { path: 'word', component: WordComponent },
-  // { path: 'addNewWord', component: AddNewWordComponent },
   { path: 'words/getRandomWord', component: RandomWordComponent },
   { path: 'authorization', component: AuthorizationComponent },
+  { path: 'tag', component: TagListComponent },
+
 
   { path: '**', component: NotFoundPageComponent}
 ];

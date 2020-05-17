@@ -2,50 +2,50 @@
     <div class="containerWord">
         <div class="wordInner arrow">
             <header class="wordInnerHeader">
-                <div class="wordInnerHeaderTitle title">{{randomWord?.name}}</div>
+                <div class="wordInnerHeaderTitle titleWord">{{randomWord?.name}}</div>
                 <div class="wordInnerHeaderOption">
                     <button class="wordInnerHeaderOptionItem">
-                        <svg class="iconOption">
+                        <mat-icon>share</mat-icon>
+                        <!-- <svg class="iconOption">
                             <use xlink:href="#share"></use>
-                        </svg>
+                        </svg> -->
                     </button>
-                    <button class="wordInnerHeaderOptionItem">
-                        <svg class="iconOption">
+                    <button class="wordInnerHeaderOptionItem  library_add">
+                        <mat-icon>turned_in_not</mat-icon>
+                        <!-- <svg class="iconOption">
                             <use xlink:href="#save"></use>
-                        </svg>
+                        </svg> -->
                     </button>
                 </div>
             </header>
             <div class="wordInnerSubtitle subtitle">
-                <p class="wordInnerSubtitleParagraph subtitle">{{randomWord?.definition}}<br><br>
+                <p class="wordInnerSubtitleParagraph subtitleWord">{{randomWord?.definition}}<br><br>
                     <i>{{randomWord?.example}}</i></p>
             </div>
             <footer class="wordInnerFooter">
                 <div class="wordInnerFooterRate">
                     <div class="wordInnerFooterRateItem">
-                        <svg class="iconRate iconRateUp">
+                        <mat-icon>thumb_up</mat-icon>
+                        <!-- <svg class="iconRate iconRateUp">
                             <use xlink:href="#tumbUp"></use>
-                        </svg>
-                        <div class="rateTumbUp rateTumb smallTitle">18</div>
+                        </svg> -->
+                        <div class="rateTumbUp rateTumb subtitleWord">{{randomWord?.likesCount}}</div>
                     </div>
                     <div class="wordInnerFooterRateItem">
-                        <svg class="iconRate iconRateDown">
+                        <mat-icon>thumb_down</mat-icon>
+                        <!-- <svg class="iconRate iconRateDown">
                             <use xlink:href="#tumbDown"></use>
-                        </svg>
-                        <div class="rateTumbDown rateTumb smallTitle">25</div>
+                        </svg> -->
+                        <div class="rateTumbDown rateTumb subtitleWord">{{randomWord?.disLikesCount}}</div>
                     </div>
 
                 </div>
                 <div class="wordInnerFooterInfo smallTitle">
-                    <div class="wordInnerFooterInfoAuthor ">IRYNA</div>
-                    <div class="wordInnerFooterInfoDatePublication">May 03, 2020</div>
+                    <div class="wordInnerFooterInfoAuthor subtitleWord">{{randomWord?.author}}</div>
+                    <div class="wordInnerFooterInfoDatePublication subtitleWord">{{randomWord?.creationDate}}</div>
                 </div>
-                <div class="wordInnerFooterTag">
-                    <a href="">#tag</a>&nbsp;
-                    <a href="">#tag</a>&nbsp;
-                    <a href="">#tag</a>&nbsp;
-                    <a href="">#tag</a>&nbsp;
-                    <a href="">#tag</a>&nbsp;
+                <div *ngFor="let item of randomWord?.tags" class="wordInnerFooterTag subtitleWord">
+                    <a href="">#{{item}}</a>&nbsp;
                 </div>
             </footer>
         </div>
