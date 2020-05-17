@@ -37,6 +37,10 @@ export class WordService {
     return this.http.get<number>(this.globalApi.GET_WORDSNUMBER_URL(serchingItem));
   }
 
+  getTopTen(): Observable<WordDTO[]>{
+    return this.http.get<WordDTO[]>(this.globalApi.TOPTEN_URL);
+  }
+
   setWords(words: Array<WordDTO>): void {
     this.words.next(words);
   }

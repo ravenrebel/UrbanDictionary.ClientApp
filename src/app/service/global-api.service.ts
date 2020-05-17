@@ -8,6 +8,7 @@ export class GlobalApiService {
     LOGIN_API = this.accountApi + '/signIn';
     SIGNUP_API = this.accountApi + '/signUp';
     WORD_URL = this.URL + 'words';
+    TOPTEN_URL = this.URL + 'words/topTen';
 
     SEARCH_WORDS_URL(serchedItem: string, skipNumber: number) {
         return `${this.WORD_URL}/search/${serchedItem}/${skipNumber}`;
