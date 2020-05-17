@@ -1,29 +1,31 @@
 import { WordService } from 'src/app/service/word.service';
 import { WordDTO } from 'src/app/model/word-dto';
-import { Component, ViewChild, Input } from '@angular/core';
+import { Component, ViewChild, Input, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
-  selector: 'app-search-words',
-  templateUrl: './search-words.component.html',
-  styleUrls: ['./search-words.component.css']
+    selector: 'app-search-words-component',
+    templateUrl: './search-words.component.html',
+    styleUrls: ['./search-words.component.css']
 })
-export class SearchWordsComponent {
+export class SearchWordsComponent implements OnInit {
     wordsNumber: number;
     words = new Array<WordDTO>();
     pageSize = 5;
-    pageNumber = 0;
+    pageNumber = 1;
     searchingWord: string;
     displayedColumns: string[] = ['word', 'definition'];
 
-    @Input()
-    set word(val: string) {
-        this.searchingWord = val;
-    }
+    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
     constructor(private wordService: WordService) { }
-
-    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+    ngOnInit(): void {
+        this.wordService.words$.subscribe(result => {
+            this.words = result;
+            this.getWordNumber();
+        });
+        this.wordService.searchedWord$.subscribe(result => this.searchingWord = result);
+    }
 
     pageEvents(event: any) {
         if (event.pageIndex > this.pageNumber) {
@@ -43,5 +45,10 @@ export class SearchWordsComponent {
             });
         }
     }
-    getWordNumber() { }
+    getWordNumber() {
+        this.wordService.getWordsNumber(this.searchingWord).subscribe((result) => {
+            this.wordsNumber = result;
+            this.loadWords();
+        });
+    }
 }
