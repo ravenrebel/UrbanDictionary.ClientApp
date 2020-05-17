@@ -40,6 +40,7 @@ import { SearchBoxWordsSmallComponent } from './components/search-box-words-smal
 import { SearchWordsComponent } from './components/search-words/search-words.component';
 import { GlobalApiService } from './service/global-api.service';
 import { ButtonCreateNewWordComponent } from './components/button-create-new-word/button-create-new-word.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { ButtonCreateNewWordComponent } from './components/button-create-new-wor
     MatButtonModule,
     MatPaginatorModule,
     MatTableModule,
+    FormsModule,
     BrowserAnimationsModule
   ],
   providers: [
