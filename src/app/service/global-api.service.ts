@@ -9,10 +9,10 @@ export class GlobalApiService {
     WORD_URL = this.URL + 'words';
 
     SEARCH_WORDS_URL(serchedItem: string, skipNumber: number) {
-        return `${this.WORD_URL}/search?serchedItem=${serchedItem}&skipNumber=${skipNumber}`;
+        return `${this.WORD_URL}/search/${serchedItem}/${skipNumber}`;
     }
 
     GET_WORDSNUMBER_URL(serchedItem: string) {
-        return `${this.WORD_URL}/wordsNumber?serchedItem=${serchedItem}`;
+        return `${this.WORD_URL}/searchCount/${serchedItem}`;
     }
 }

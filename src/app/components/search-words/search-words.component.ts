@@ -5,8 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
     selector: 'app-search-words-component',
-    templateUrl: './search-words-component.html',
-    styleUrls: ['./search-words-component.component.css']
+    templateUrl: './search-words.component.html',
+    styleUrls: ['./search-words.component.css']
 })
 export class SearchWordsComponent implements OnInit {
     wordsNumber: number;

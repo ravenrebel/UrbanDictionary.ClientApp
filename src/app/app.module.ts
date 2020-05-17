@@ -39,6 +39,7 @@ import { SearchBoxWordsComponent } from './components/search-box-words/search-bo
 import { SearchBoxWordsSmallComponent } from './components/search-box-words-small/search-box-words-small.component';
 import { SearchWordsComponent } from './components/search-words/search-words.component';
 import { GlobalApiService } from './service/global-api.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { GlobalApiService } from './service/global-api.service';
     MatButtonModule,
     MatPaginatorModule,
     MatTableModule,
+    FormsModule,
     BrowserAnimationsModule
   ],
   providers: [

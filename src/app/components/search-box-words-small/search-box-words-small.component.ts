@@ -9,17 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-box-words-small.component.css']
 })
 export class SearchBoxWordsSmallComponent {
-  wordControll = new FormControl('', [Validators.required]);
+  word = '';
 
   constructor(private wordService: WordService, private router: Router) { }
 
   search() {
-    this.wordService.setSeachedWord(this.wordControll.value);
-    this.wordService.getWords(this.wordControll.value, 0)// 0 because it’s first
+    this.wordService.setSeachedWord(this.word);
+    this.wordService.getWords(this.word, 0)// 0 because it’s first
       .subscribe(result => {
         this.wordService.setWords(result);
         this.router.navigate(['/searchWord']);
       });
   }
-
 }
