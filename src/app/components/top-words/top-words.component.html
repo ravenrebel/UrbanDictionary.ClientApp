@@ -1,8 +1,8 @@
 <section class="word">
     <div class="containerWord">
-        <div class="wordInner arrow">
+        <div class="wordInner arrow" *ngFor="let word of words">
             <header class="wordInnerHeader">
-                <div class="wordInnerHeaderTitle title">Word</div>
+                <div class="wordInnerHeaderTitle title">{{word.name}}</div>
                 <div class="wordInnerHeaderOption">
                     <button class="wordInnerHeaderOptionItem">
                         <svg class="iconOption">
@@ -17,11 +17,8 @@
                 </div>
             </header>
             <div class="wordInnerSubtitle subtitle">
-                <p class="wordInnerSubtitleParagraph subtitle">A starchy plant tuber which is one of the most
-                    important food
-                    crops,<br> cooked and eaten as a vegetable. <br><br><i>The plant of the nightshade family which
-                    produces <br>potatoes
-                    on underground runners.</i></p>
+                <p class="wordInnerSubtitleParagraph subtitle">{{word.definition}}<br><br>
+                    <i>{{word.example}}</i></p>
             </div>
             <footer class="wordInnerFooter">
                 <div class="wordInnerFooterRate">
@@ -29,26 +26,22 @@
                         <svg class="iconRate iconRateUp">
                             <use xlink:href="#tumbUp"></use>
                         </svg>
-                        <div class="rateTumbUp rateTumb smallTitle">18</div>
+                        <div class="rateTumbUp rateTumb smallTitle">{{word.likesCount}}</div>
                     </div>
                     <div class="wordInnerFooterRateItem">
                         <svg class="iconRate iconRateDown">
                             <use xlink:href="#tumbDown"></use>
                         </svg>
-                        <div class="rateTumbDown rateTumb smallTitle">25</div>
+                        <div class="rateTumbDown rateTumb smallTitle">{{word.disLikesCount}}</div>
                     </div>
 
                 </div>
                 <div class="wordInnerFooterInfo smallTitle">
-                    <div class="wordInnerFooterInfoAuthor ">IRYNA</div>
-                    <div class="wordInnerFooterInfoDatePublication">May 03, 2020</div>
+                    <div class="wordInnerFooterInfoAuthor ">{{word.author}}</div>
+                    <div class="wordInnerFooterInfoDatePublication">{{word.creationDate}}</div>
                 </div>
-                <div class="wordInnerFooterTag">
-                    <a href="">#tag</a>&nbsp;
-                    <a href="">#tag</a>&nbsp;
-                    <a href="">#tag</a>&nbsp;
-                    <a href="">#tag</a>&nbsp;
-                    <a href="">#tag</a>&nbsp;
+                <div class="wordInnerFooterTag" *ngFor="let tag of word.tags">
+                    <a href="">{{tag}}</a>&nbsp;
                 </div>
             </footer>
         </div>
