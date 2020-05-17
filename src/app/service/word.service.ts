@@ -47,6 +47,7 @@ export class WordService {
   setSeachedWord(word: string): void {
     this.searchedWord.next(word);
   }
+
   unsetSeachedWord(): void {
     this.searchedWord.next(null);
   }
