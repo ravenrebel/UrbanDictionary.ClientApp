@@ -26,7 +26,7 @@ export class WordService {
   }
 
   getRandom(): Observable<WordDTO[]> {
-    return this.http.get<WordDTO[]>(this.url + '/randomWord');
+    return this.http.get<WordDTO[]>(this.url + '/words/randomWord');
   }
 
   getWords(serchingItem: string, skipNumber: number): Observable<WordDTO[]> {
