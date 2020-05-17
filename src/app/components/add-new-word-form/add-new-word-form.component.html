@@ -5,13 +5,14 @@
     <mat-sidenav-content class="contentInner">
         <app-header-top class="cnt"></app-header-top>
         <form action="" class="addWord cnt">
-            <label for="word">Word<input type="text" name="word" class="" placeholder="Слово" required></label>
-            <label for="definition">Definition <textarea name="definition" id="" cols="30" rows="10"
+            <label for="word">Word<input [formControl]="wordNameControl" type="text" name="word" class="" placeholder="Слово" required></label>
+            <label for="definition">Definition <textarea [formControl]="definitionControl" name="definition" id="" cols="30" rows="10"
                     placeholder="Пояснення" required></textarea></label>
-            <label for="example">Example <textarea name="example" id="" cols="30" rows="10"
+            <label for="example">Example <textarea [formControl]="exampleControl" name="example" id="" cols="30" rows="10"
                     placeholder="Приклад"></textarea></label>
-            <label for="tags">List Tag <textarea name="tags" id="" cols="30" rows="10"
+            <label for="tags">List Tag <textarea [formControl]="tagsControl" name="tags" id="" cols="30" rows="10"
                     placeholder="Теги"></textarea></label>
+                    <button class="btn" (click)="createWord()">Створити слово</button>
         </form>
         <app-footer class="f"></app-footer>
     </mat-sidenav-content>
