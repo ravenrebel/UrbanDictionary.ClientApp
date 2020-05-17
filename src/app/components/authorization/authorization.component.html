@@ -1,59 +1,59 @@
 <div class="body">
-    <div class="container">
-      <div class="box"></div>
-      <div class="container-forms">
-        <div class="container-info">
-          <div class="info-item">
-            <div class="table">
-              <div class="table-cell">
-                <p>
-                  Уже маєте акаунт?
-                </p>
-                <div class="btn">
-                  Увійти
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="info-item">
-            <div class="table">
-              <div class="table-cell">
-                <p>
-                  Немає акаунту?
-                </p>
-                <div class="btn">
-                  Зареєструватись
-                </div>
+  <div class="container">
+    <div class="box"></div>
+    <div class="container-forms">
+      <div class="container-info">
+        <div class="info-item">
+          <div class="table">
+            <div class="table-cell">
+              <p>
+                Уже маєте акаунт?
+              </p>
+              <div class="btn">
+                Увійти
               </div>
             </div>
           </div>
         </div>
-        <div class="container-form">
-          <div class="form-item log-in">
-            <div class="table">
-              <div class="table-cell input-table-cell">
-                <input name="email" placeholder="Email" type="email" />
-                <input name="password" placeholder="Пароль" type="password" />
-                <div class="btn">
-                  Вхід
-                </div>
+        <div class="info-item">
+          <div class="table">
+            <div class="table-cell">
+              <p>
+                Немає акаунту?
+              </p>
+              <div class="btn">
+                Зареєструватись
               </div>
             </div>
           </div>
-          <div class="form-item sign-up">
-            <div class="table">
-              <div class="table-cell input-table-cell">
-                <input name="email" placeholder="Email" type="email" id="email"/>
+        </div>
+      </div>
+      <div class="container-form">
+        <div class="form-item log-in">
+          <div class="table">
+            <div class="table-cell input-table-cell">
+                <input name="email" [formControl]="emailControl" placeholder="Email" type="email" />
+                <input name="password" [formControl]="passwordControl" placeholder="Пароль" type="password" />
+                <div class="btn" (click)="signin()">
+                  Вхід
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-item sign-up">
+          <div class="table">
+            <div class="table-cell input-table-cell">
+                <input name="email" [formControl]="emailControl" placeholder="Email" type="email" id="email" />
                 <!-- <label for="email">Email</label> -->
-                <input name="name" placeholder="Ім'я користувача" type="text" />
-                <input name="password" placeholder="Пароль" type="Password" />
-                <div class="btn">
+                <input name="name" [formControl]="usernameControl" placeholder="Ім'я користувача" type="text" />
+                <input name="password" [formControl]="passwordControl" placeholder="Пароль" type="Password" />
+                <div class="btn" (click)="signup()">
                   Створити
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

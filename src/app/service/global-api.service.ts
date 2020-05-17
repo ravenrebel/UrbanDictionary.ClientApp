@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 export class GlobalApiService {
     URL = environment.appUrl;
     accountApi = this.URL + 'account';
-    LOGIN_API = this.accountApi + 'signIn';
+    LOGIN_API = this.accountApi + '/signIn';
+    SIGNUP_API = this.accountApi + '/signUp';
     WORD_URL = this.URL + 'words';
 
     SEARCH_WORDS_URL(serchedItem: string, skipNumber: number) {

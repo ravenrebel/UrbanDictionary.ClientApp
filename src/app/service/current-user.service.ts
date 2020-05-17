@@ -28,6 +28,9 @@ export class CurrentUserService {
 
         this.user = new BehaviorSubject<User>(null);
         this.user$ = this.user.asObservable();
+
+        this.isAuthentificated = new BehaviorSubject<boolean>(null);
+        this.isAuthentificated$ = this.isAuthentificated.asObservable();
     }
 
     setCurrentUser(user: User): void {
@@ -49,6 +52,7 @@ export class CurrentUserService {
     }
 
     hasAuthentification(): Observable<boolean> {
+        debugger;
         return this.isAuthentificated$;
     }
 }

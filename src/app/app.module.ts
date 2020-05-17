@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableModule} from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +21,7 @@ import { SvgComponent } from './components/svg/svg.component';
 import { CheckInComponent } from './components/check-in/check-in.component';
 import { TopWordsComponent } from './components/top-words/top-words.component';
 
-import {WordService} from './service/word.service';
+import { WordService } from './service/word.service';
 import { RandomWordComponent } from './components/random-word/random-word.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
@@ -40,7 +40,11 @@ import { SearchBoxWordsSmallComponent } from './components/search-box-words-smal
 import { SearchWordsComponent } from './components/search-words/search-words.component';
 import { GlobalApiService } from './service/global-api.service';
 import { ButtonCreateNewWordComponent } from './components/button-create-new-word/button-create-new-word.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SignInService } from './service/signIn.service';
+import { CurrentUserService } from './service/current-user.service';
+import { AuthentificationGuard } from './guards/AuthentificationGuard';
 
 
 @NgModule({
@@ -74,7 +78,7 @@ import { FormsModule } from '@angular/forms';
     SearchBoxWordsSmallComponent,
     SearchWordsComponent,
     ButtonCreateNewWordComponent,
- 
+
   ],
   imports: [
     BrowserModule,
@@ -84,12 +88,17 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatPaginatorModule,
     MatTableModule,
+    MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
   providers: [
     WordService,
-    GlobalApiService
+    GlobalApiService,
+    SignInService,
+    CurrentUserService,
+    AuthentificationGuard
   ],
   bootstrap: [AppComponent]
 })
