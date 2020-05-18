@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WordDTO } from 'src/app/model/word-dto';
 import { WordService } from 'src/app/service/word.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-random-word',
@@ -15,6 +15,7 @@ export class RandomWordComponent implements OnInit {
   datePipe = new DatePipe('en-US');
 
   constructor(
+    private router: Router,
     private wordService: WordService
   ){};
 
@@ -44,4 +45,17 @@ export class RandomWordComponent implements OnInit {
     document.execCommand('copy');
     document.body.removeChild(selBox);
   }
+
+  like(id): void {
+    this.wordService.likeWord(id).subscribe(element => {
+      window.location.reload();
+    });
+  }
+
+  dislike(id): void {
+    this.wordService.dislikeWord(id).subscribe(element => {
+      window.location.reload();
+    });
+  }
+
 }
