@@ -12,12 +12,35 @@ export class GlobalApiService {
     LAST_TEN_URL = this.URL + 'words/lastTen';
     CREATE_WORD_URL = this.URL + 'currentUser/createWord';
 
-    SEARCH_WORDS_URL(serchedItem: string, skipNumber: number) {
-        return `${this.WORD_URL}/search/${serchedItem}/${skipNumber}`;
+    LIKE_WORD_URL(id: number){
+      return `${this.WORD_URL}/like/${id}`;
     }
 
-    GET_WORDSNUMBER_URL(serchedItem: string) {
-        return `${this.WORD_URL}/searchCount/${serchedItem}`;
+    DISLIKE_WORD_URL(id: number){
+    return `${this.WORD_URL}/dislike/${id}`;
     }
 
+    APPROVE_WORD_URL(id: number){
+      return `${this.WORD_URL}/approve/${id}`;
+    }
+
+    DISAPPROVE_WORD_URL(id: number){
+      return `${this.WORD_URL}/disapprove/${id}`;
+    }
+
+    DELETE_WORD_URL(id: number){
+      return `${this.WORD_URL}/delete/${id}`;
+    }
+
+    GET_WORDS_BY_TAG_URL(tag: string){
+      return `${this.WORD_URL}/getByTag/${tag}`;
+    }
+
+    SEARCH_WORDS_URL(searchedItem: string, skipNumber: number) {
+          return `${this.WORD_URL}/search/${searchedItem}/${skipNumber}`;
+      }
+
+    GET_WORDSNUMBER_URL(searchedItem: string) {
+      return `${this.WORD_URL}/searchCount/${searchedItem}`;
+    }
 }
