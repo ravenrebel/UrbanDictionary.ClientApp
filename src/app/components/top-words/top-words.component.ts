@@ -14,8 +14,20 @@ export class TopWordsComponent implements OnInit {
   constructor(private wordService: WordService) { }
 
   ngOnInit(): void {
-    debugger
     this.wordService.getTopTen().subscribe((result) => this.words = result);
+  }
+  copyMessage(word:WordDTO){
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = `${word.name} – ${word.definition}`
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
   }
 
 }

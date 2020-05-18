@@ -4,11 +4,8 @@
             <header class="wordInnerHeader">
                 <div class="wordInnerHeaderTitle titleWord">{{word.name}}</div>
                 <div class="wordInnerHeaderOption">
-                    <button class="wordInnerHeaderOptionItem">
+                    <button class="wordInnerHeaderOptionItem" (click)='copyMessage(word);'>
                         <mat-icon>share</mat-icon>
-                        <!-- <svg class="iconOption">
-                            <use xlink:href="#share"></use>
-                        </svg> -->
                     </button>
                     <button class="wordInnerHeaderOptionItem">
                         <mat-icon>turned_in_not</mat-icon>
