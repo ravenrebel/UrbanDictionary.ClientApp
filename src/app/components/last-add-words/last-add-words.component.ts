@@ -46,7 +46,7 @@ export class LastAddWordsComponent implements OnInit {
 
   like(id): void {
     this.wordService.likeWord(id).subscribe(element => {
-      this.router.navigate(['lastAdded']);
+      window.location.reload();
     });
   }
 }
