@@ -4,11 +4,8 @@
             <header class="wordInnerHeader">
                 <div class="wordInnerHeaderTitle titleWord">{{randomWord?.name}}</div>
                 <div class="wordInnerHeaderOption">
-                    <button class="wordInnerHeaderOptionItem" (click)="share()">
+                    <button class="wordInnerHeaderOptionItem" (click)='copyMessage(randomWord);'>
                         <mat-icon>share</mat-icon>
-                        <!-- <svg class="iconOption">
-                            <use xlink:href="#share"></use>
-                        </svg> -->
                     </button>
                     <button class="wordInnerHeaderOptionItem  library_add">
                         <mat-icon>turned_in_not</mat-icon>

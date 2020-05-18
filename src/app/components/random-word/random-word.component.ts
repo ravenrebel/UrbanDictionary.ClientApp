@@ -21,16 +21,27 @@ export class RandomWordComponent implements OnInit {
   
   ngOnInit(): void {
     this.reload();
-    this.share();
+
   }
 
-  share(){
-    
-  }
+
   reload(){
     this.wordService.getRandom().subscribe(word =>
       {
         this.randomWords = word;
       });
+  }
+  copyMessage(word:WordDTO){
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = `${word.name} – ${word.definition}`
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
   }
 }
