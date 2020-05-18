@@ -8,9 +8,13 @@ export class GlobalApiService {
     LOGIN_API = this.accountApi + '/signIn';
     SIGNUP_API = this.accountApi + '/signUp';
     WORD_URL = this.URL + 'words';
+    CURRENT_USER_URL = this.URL + 'currentUser';
     TOPTEN_URL = this.URL + 'words/topTen';
     LAST_TEN_URL = this.URL + 'words/lastTen';
     CREATE_WORD_URL = this.URL + 'currentUser/createWord';
+    GET_SAVED_WORDS_URL = this.URL + 'currentUser/savedWords';
+    GET_CREATED_WORDS_URL = this.URL + 'currentUser/createdWords';
+    EDIT_WORD_URL = this.URL + 'currentUser/editWord';
 
     LIKE_WORD_URL(id: number){
       return `${this.WORD_URL}/like/${id}`;
@@ -42,5 +46,21 @@ export class GlobalApiService {
 
     GET_WORDSNUMBER_URL(searchedItem: string) {
       return `${this.WORD_URL}/searchCount/${searchedItem}`;
+    }
+
+    SAVE_WORD_URL(id: number){
+      return `${this.CURRENT_USER_URL}/saveWord/${id}`;
+    }
+
+    DELETE_SAVED_WORD_URL(id: number){
+      return `${this.CURRENT_USER_URL}/deleteSavedWord/${id}`;
+    }
+
+    DELETE_CREATED_WORD_URL(id: number){
+      return `${this.CURRENT_USER_URL}/deleteCreatedWord/${id}`;
+    }
+
+    SEND_TO_MODERATOR_URL(id: number){
+      return `${this.CURRENT_USER_URL}/sendToModerator/${id}`;
     }
 }

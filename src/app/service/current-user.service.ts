@@ -52,7 +52,6 @@ export class CurrentUserService {
     }
 
     hasAuthentification(): Observable<boolean> {
-        debugger;
         return this.isAuthentificated$;
     }
 }
