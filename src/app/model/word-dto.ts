@@ -4,12 +4,12 @@ export class WordDTO {
     id: number;
     name: string;
     definition: string;
-    author: string;
+    authorName: string;
     creationDate: Date;
     example: string;
     image: string;
     wordStatus: number;
     likesCount: number;
-    disLikesCount: number;
+    dislikesCount: number;
     tags: string[];
 }

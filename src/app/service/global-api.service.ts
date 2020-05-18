@@ -9,6 +9,7 @@ export class GlobalApiService {
     SIGNUP_API = this.accountApi + '/signUp';
     WORD_URL = this.URL + 'words';
     TOPTEN_URL = this.URL + 'words/topTen';
+    LAST_TEN_URL = this.URL + 'words/lastTen';
     CREATE_WORD_URL = this.URL + 'currentUser/createWord';
 
     SEARCH_WORDS_URL(serchedItem: string, skipNumber: number) {

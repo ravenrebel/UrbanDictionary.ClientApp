@@ -1,22 +1,53 @@
-<section class="topRate">
-    <div class="container">
-        <div class="topRateTitle title">Останні додані слова</div>
-        <div class="topRateByTag">
-            <div class="topRateByTagItem">
-                <!-- <div class="topRateByTagItemWordTag subtitle">#Повсякденні</div> -->
-                <div class="topRateByTagItemWord">Слово</div>
-                <div class="topRateByTagItemWord">Слово</div>
-                <div class="topRateByTagItemWord">Слово</div>
-                <div class="topRateByTagItemWord">Слово</div>
-                <div class="topRateByTagItemWord">Слово</div>
+<section class="word" *ngFor = 'let word of lastWords'>
+    <div class="containerWord">
+        <div class="wordInner arrow" >
+            <header class="wordInnerHeader">
+                <div class="wordInnerHeaderTitle titleWord">{{word.name}}</div>
+                <div class="wordInnerHeaderOption">
+                    <button class="wordInnerHeaderOptionItem">
+                        <mat-icon>share</mat-icon>
+                        <!-- <svg class="iconOption">
+                            <use xlink:href="#share"></use>
+                        </svg> -->
+                    </button>
+                    <button class="wordInnerHeaderOptionItem">
+                        <mat-icon>turned_in_not</mat-icon>
+                        <!-- <svg class="iconOption">
+                            <use xlink:href="#save"></use>
+                        </svg> -->
+                    </button>
+                </div>
+            </header>
+            <div class="wordInnerSubtitle subtitle">
+                <p class="wordInnerSubtitleParagraph subtitleWord">{{word.definition}}<br><br>
+                    <i>{{word.example}}</i></p>
             </div>
-            <!-- <div class="topRateByTagItem">
-                <div class="topRateByTagItemWord">Слово</div>
-                <div class="topRateByTagItemWord">Слово</div>
-                <div class="topRateByTagItemWord">Слово</div>
-                <div class="topRateByTagItemWord">Слово</div>
-                <div class="topRateByTagItemWord">Слово</div>
-            </div> -->
+            <footer class="wordInnerFooter">
+                <div class="wordInnerFooterRate">
+                    <div class="wordInnerFooterRateItem">
+                        <mat-icon>thumb_up</mat-icon>
+                        <!-- <svg class="iconRate iconRateUp">
+                            <use xlink:href="#tumbUp"></use>
+                        </svg> -->
+                        <div class="rateTumbUp rateTumb subtitleWord">{{word.likesCount}}</div>
+                    </div>
+                    <div class="wordInnerFooterRateItem">
+                        <mat-icon>thumb_down</mat-icon>
+                        <!-- <svg class="iconRate iconRateDown">
+                            <use xlink:href="#tumbDown"></use>
+                        </svg> -->
+                        <div class="rateTumbDown rateTumb subtitleWord">{{word.dislikesCount}}</div>
+                    </div>
+
+                </div>
+                <div class="wordInnerFooterInfo">
+                    <div class="wordInnerFooterInfoAuthor subtitleWord">{{word.authorName}}</div>
+                    <div class="wordInnerFooterInfoDatePublication subtitleWord">{{datePipe.transform(word.creationDate, 'dd/MM/yyyy h:mm')}}</div>
+                </div>
+                <div class="wordInnerFooterTag subtitleWord" *ngFor="let tag of word.tags">
+                    <a href="">#{{tag}}</a>&nbsp;
+                </div>
+            </footer>
         </div>
     </div>
 </section>

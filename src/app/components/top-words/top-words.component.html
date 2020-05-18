@@ -1,47 +1,51 @@
-<section class="word">
+<section class="word" *ngFor="let word of words">
     <div class="containerWord">
-        <div class="wordInner arrow" *ngFor="let word of words">
+        <div class="wordInner arrow" >
             <header class="wordInnerHeader">
-                <div class="wordInnerHeaderTitle title">{{word.name}}</div>
+                <div class="wordInnerHeaderTitle titleWord">{{word.name}}</div>
                 <div class="wordInnerHeaderOption">
                     <button class="wordInnerHeaderOptionItem">
-                        <svg class="iconOption">
+                        <mat-icon>share</mat-icon>
+                        <!-- <svg class="iconOption">
                             <use xlink:href="#share"></use>
-                        </svg>
+                        </svg> -->
                     </button>
                     <button class="wordInnerHeaderOptionItem">
-                        <svg class="iconOption">
+                        <mat-icon>turned_in_not</mat-icon>
+                        <!-- <svg class="iconOption">
                             <use xlink:href="#save"></use>
-                        </svg>
+                        </svg> -->
                     </button>
                 </div>
             </header>
             <div class="wordInnerSubtitle subtitle">
-                <p class="wordInnerSubtitleParagraph subtitle">{{word.definition}}<br><br>
+                <p class="wordInnerSubtitleParagraph subtitleWord">{{word.definition}}<br><br>
                     <i>{{word.example}}</i></p>
             </div>
             <footer class="wordInnerFooter">
                 <div class="wordInnerFooterRate">
                     <div class="wordInnerFooterRateItem">
-                        <svg class="iconRate iconRateUp">
+                        <mat-icon>thumb_up</mat-icon>
+                        <!-- <svg class="iconRate iconRateUp">
                             <use xlink:href="#tumbUp"></use>
-                        </svg>
-                        <div class="rateTumbUp rateTumb smallTitle">{{word.likesCount}}</div>
+                        </svg> -->
+                        <div class="rateTumbUp rateTumb subtitleWord">{{word.likesCount}}</div>
                     </div>
                     <div class="wordInnerFooterRateItem">
-                        <svg class="iconRate iconRateDown">
+                        <mat-icon>thumb_down</mat-icon>
+                        <!-- <svg class="iconRate iconRateDown">
                             <use xlink:href="#tumbDown"></use>
-                        </svg>
-                        <div class="rateTumbDown rateTumb smallTitle">{{word.disLikesCount}}</div>
+                        </svg> -->
+                        <div class="rateTumbDown rateTumb subtitleWord">{{word.dislikesCount}}</div>
                     </div>
 
                 </div>
-                <div class="wordInnerFooterInfo smallTitle">
-                    <div class="wordInnerFooterInfoAuthor ">{{word.author}}</div>
-                    <div class="wordInnerFooterInfoDatePublication">{{word.creationDate}}</div>
+                <div class="wordInnerFooterInfo">
+                    <div class="wordInnerFooterInfoAuthor subtitleWord">{{word.authorName}}</div>
+                    <div class="wordInnerFooterInfoDatePublication subtitleWord">{{datePipe.transform(word.creationDate, 'dd/MM/yyyy h:mm')}}</div>
                 </div>
-                <div class="wordInnerFooterTag" *ngFor="let tag of word.tags">
-                    <a href="">{{tag}}</a>&nbsp;
+                <div class="wordInnerFooterTag subtitleWord" *ngFor="let tag of word.tags">
+                    <a href="">#{{tag}}</a>&nbsp;
                 </div>
             </footer>
         </div>

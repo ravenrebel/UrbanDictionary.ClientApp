@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WordService } from 'src/app/service/word.service';
 import { WordDTO } from 'src/app/model/word-dto';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-top-words',
@@ -9,6 +10,7 @@ import { WordDTO } from 'src/app/model/word-dto';
 })
 export class TopWordsComponent implements OnInit {
   words = new Array<WordDTO>();
+  datePipe = new DatePipe('en-US');
   constructor(private wordService: WordService) { }
 
   ngOnInit(): void {
