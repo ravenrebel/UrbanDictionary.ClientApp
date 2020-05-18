@@ -15,7 +15,7 @@ export class SearchWordsComponent implements OnInit, AfterViewInit {
     pageSize = 5;
     pageNumber = 1;
     searchingWord: string;
-    displayedColumns: string[] = ['word', 'definition'];
+    displayedColumns: string[] = ['word', 'definition', 'example'];
     dataSource = new MatTableDataSource<WordDTO>();
 
     @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

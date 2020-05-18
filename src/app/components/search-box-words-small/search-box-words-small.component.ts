@@ -13,6 +13,7 @@ export class SearchBoxWordsSmallComponent {
   constructor(private wordService: WordService, private router: Router) { }
 
   search() {
+    debugger
     this.wordService.setSeachedWord(this.word);
     this.wordService.getWords(this.word, 0)// 0 because it’s first
       .subscribe(result => {
