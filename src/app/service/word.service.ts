@@ -30,12 +30,12 @@ export class WordService {
     return this.http.get<WordDTO[]>(this.url + '/words/randomWord');
   }
 
-  getWords(serchingItem: string, skipNumber: number): Observable<WordDTO[]> {
-    return this.http.get<WordDTO[]>(this.globalApi.SEARCH_WORDS_URL(serchingItem, skipNumber));
+  getWords(searchingItem: string, skipNumber: number): Observable<WordDTO[]> {
+    return this.http.get<WordDTO[]>(this.globalApi.SEARCH_WORDS_URL(searchingItem, skipNumber));
   }
 
-  getWordsNumber(serchingItem: string): Observable<number> {
-    return this.http.get<number>(this.globalApi.GET_WORDSNUMBER_URL(serchingItem));
+  getWordsNumber(searchingItem: string): Observable<number> {
+    return this.http.get<number>(this.globalApi.GET_WORDSNUMBER_URL(searchingItem));
   }
 
   getTopTen(): Observable<WordDTO[]>{
@@ -54,15 +54,39 @@ export class WordService {
     this.searchedWord.next(word);
   }
 
-  unsetSeachedWord(): void {
+  unsetSearchedWord(): void {
     this.searchedWord.next(null);
   }
-  createNewWord(model:createWordDTO){
+
+  createNewWord(model: createWordDTO){
     return this.http.post(this.globalApi.CREATE_WORD_URL, model);
   }
+
   getLastWord(): Observable<WordDTO[]>{
     return this.http.get<WordDTO[]>(this.globalApi.LAST_TEN_URL);
   }
 
+  likeWord(id: number): Observable<object>{
+    return this.http.get(this.globalApi.LIKE_WORD_URL(id));
+  }
 
+  dislikeWord(id: number): Observable<object>{
+    return this.http.get(this.globalApi.DISLIKE_WORD_URL(id));
+  }
+
+  deleteWord(id: number): Observable<object>{
+    return this.http.delete(this.globalApi.DELETE_WORD_URL(id));
+  }
+
+  getWordsByTag(tag: string): Observable<WordDTO[]>{
+    return this.http.get<WordDTO[]>(this.globalApi.GET_WORDS_BY_TAG_URL(tag));
+  }
+
+  approveWord(id: number): Observable<object>{
+    return this.http.get(this.globalApi.APPROVE_WORD_URL(id));
+  }
+
+  disapproveWord(id: number): Observable<object>{
+    return this.http.get(this.globalApi.DISAPPROVE_WORD_URL(id));
+  }
 }
