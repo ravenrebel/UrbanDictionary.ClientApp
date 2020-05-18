@@ -4,4 +4,5 @@
     align-items: center;
     padding: 15px 0 10px;
     background: #6d6d6d;
+    flex-wrap: wrap;
 }
