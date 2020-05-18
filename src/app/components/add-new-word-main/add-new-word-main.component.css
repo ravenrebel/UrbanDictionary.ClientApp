@@ -20,4 +20,10 @@
   .addWordBtn {
     margin-top: 50px;
   }
+  @media (max-width:900px){
+    .addWord {
+        height: 70vh;
+
+      }
+  }
   
