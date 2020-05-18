@@ -2,6 +2,7 @@ import { WordService } from 'src/app/service/word.service';
 import { WordDTO } from 'src/app/model/word-dto';
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-last-add-words',
@@ -13,23 +14,23 @@ export class LastAddWordsComponent implements OnInit {
   lastWords: WordDTO[];
   datePipe = new DatePipe('en-US');
 
-  
+
   constructor(
+    private router: Router,
     private wordService: WordService
   ){};
 
-  
   ngOnInit(): void {
     this.reload();
   }
 
   reload(){
-    this.wordService.getRandom().subscribe(word =>
+    this.wordService.getLastWords().subscribe(word =>
       {
         this.lastWords = word;
       });
   }
-  copyMessage(word:WordDTO){
+  copyMessage(word: WordDTO){
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
@@ -41,5 +42,11 @@ export class LastAddWordsComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
+  }
+
+  like(id): void {
+    this.wordService.likeWord(id).subscribe(element => {
+      this.router.navigate(['lastAdded']);
+    });
   }
 }

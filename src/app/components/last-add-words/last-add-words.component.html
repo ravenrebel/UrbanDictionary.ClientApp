@@ -22,10 +22,12 @@
             <footer class="wordInnerFooter">
                 <div class="wordInnerFooterRate">
                     <div class="wordInnerFooterRateItem">
+                      <button (click)='like(word.id);'>
                         <mat-icon>thumb_up</mat-icon>
                         <!-- <svg class="iconRate iconRateUp">
                             <use xlink:href="#tumbUp"></use>
                         </svg> -->
+                      </button>
                         <div class="rateTumbUp rateTumb subtitleWord">{{word.likesCount}}</div>
                     </div>
                     <div class="wordInnerFooterRateItem">

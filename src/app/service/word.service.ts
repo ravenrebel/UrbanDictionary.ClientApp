@@ -62,7 +62,7 @@ export class WordService {
     return this.http.post(this.globalApi.CREATE_WORD_URL, model);
   }
 
-  getLastWord(): Observable<WordDTO[]>{
+  getLastWords(): Observable<WordDTO[]>{
     return this.http.get<WordDTO[]>(this.globalApi.LAST_TEN_URL);
   }
 
