@@ -50,3 +50,10 @@ hr{
 background: #000;}
 
 
+@media (max-width:900px){
+    .link {
+        color: #EAEAEA;
+        font-size: 20px;
+        margin: 3px;
+    }
+}

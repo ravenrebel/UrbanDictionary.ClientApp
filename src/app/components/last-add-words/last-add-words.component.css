@@ -82,6 +82,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+          flex-wrap: wrap;
 }
 
 .wordInnerHeaderTitle {
@@ -252,4 +253,16 @@ hr{
   justify-content: center;
   align-items: center;
   margin: 30px auto;
+}
+@media (max-width:900px){
+  .wordInnerHeader{
+    justify-content: center;
+  }
+  .wordInnerFooter{
+    justify-content: center;
+
+  }
+  .titleWord{
+    font-size: 1.5rem;
+  }
 }
