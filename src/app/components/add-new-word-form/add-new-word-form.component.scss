@@ -1,8 +1,46 @@
 .addWord{
+    margin-left: 20px;
+    margin-top: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
+
+}
+
+.addWordInput{
+    
+}
+label{
+    display: flex;
+    flex-direction: column;
+}
+.titleWord{
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 5px;
+    font-style: normal;
+    -webkit-text-size-adjust: 100%;
+       -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+}
+textarea{
+    padding: 10px;
+    font-size: 1.0rem;
+    min-width: 800px;
+    max-width: 800px;
+    min-height: 80px;
+    max-height: 80px;
+}
+input{
+    min-width: 800px;
+    max-width: 800px;
+    padding: 10px;
+}
+.btn{
+    margin-top: 50px;
 }
 .example-container {
     position: absolute;

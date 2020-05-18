@@ -4,30 +4,24 @@
     </mat-sidenav>
     <mat-sidenav-content class="contentInner">
         <app-header-top class="cnt"></app-header-top>
-        <table mat-table [dataSource]="words">
+        <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="word">
                 <th mat-header-cell *matHeaderCellDef>
-                    <div>Header1</div>
+                    <div>Назва слова</div>
                 </th>
                 <td mat-cell *matCellDef="let word"> {{word.name}} </td>
             </ng-container>
             <ng-container matColumnDef="definition">
                 <th mat-header-cell *matHeaderCellDef>
-                    <div>Header2</div>
+                    <div>Значення</div>
                 </th>
                 <td mat-cell *matCellDef="let word"> {{word.definition}} </td>
             </ng-container>
-            <ng-container matColumnDef="word">
+            <ng-container matColumnDef="example">
                 <th mat-header-cell *matHeaderCellDef>
-                    <div>Header3</div>
+                    <div>Приклад</div>
                 </th>
                 <td mat-cell *matCellDef="let word"> {{word.example}} </td>
-            </ng-container>
-            <ng-container matColumnDef="word">
-                <th mat-header-cell *matHeaderCellDef>
-                    <div>Header4</div>
-                </th>
-                <td mat-cell *matCellDef="let word"> {{word.tags}} </td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
