@@ -8,13 +8,13 @@ export class CurrentUserService {
     public username$: Observable<string>;
     public user$: Observable<User>;
     public role$: Observable<Role>;
-    public isAuthentificated$: Observable<boolean>;
+    public isAuthenticated$: Observable<boolean>;
 
     private email: BehaviorSubject<string>;
     private username: BehaviorSubject<string>;
     private role: BehaviorSubject<Role>;
     private user: BehaviorSubject<User>;
-    private isAuthentificated: BehaviorSubject<boolean>;
+    private isAuthenticated: BehaviorSubject<boolean>;
 
     constructor() {
         this.email = new BehaviorSubject<string>(null);
@@ -29,8 +29,8 @@ export class CurrentUserService {
         this.user = new BehaviorSubject<User>(null);
         this.user$ = this.user.asObservable();
 
-        this.isAuthentificated = new BehaviorSubject<boolean>(null);
-        this.isAuthentificated$ = this.isAuthentificated.asObservable();
+        this.isAuthenticated = new BehaviorSubject<boolean>(null);
+        this.isAuthenticated$ = this.isAuthenticated.asObservable();
     }
 
     setCurrentUser(user: User): void {
@@ -39,7 +39,7 @@ export class CurrentUserService {
             this.username.next(user.username);
             this.role.next(user.role);
             this.user.next(user);
-            this.isAuthentificated.next(true);
+            this.isAuthenticated.next(true);
         }
     }
 
@@ -48,10 +48,10 @@ export class CurrentUserService {
         this.username.next(null);
         this.role.next(null);
         this.user.next(null);
-        this.isAuthentificated.next(false);
+        this.isAuthenticated.next(false);
     }
 
-    hasAuthentification(): Observable<boolean> {
-        return this.isAuthentificated$;
+    hasAuthentication(): Observable<boolean> {
+        return this.isAuthenticated$;
     }
 }
