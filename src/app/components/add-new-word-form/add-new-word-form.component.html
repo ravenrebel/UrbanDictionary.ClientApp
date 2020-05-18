@@ -3,15 +3,15 @@
         <app-header></app-header>
     </mat-sidenav>
     <mat-sidenav-content class="contentInner">
-        <app-header-top class="cnt"></app-header-top>
+        <!-- <app-header-top class="cnt"></app-header-top> -->
         <form action="" class="addWord cnt">
-            <label for="word">Word<input [formControl]="wordNameControl" type="text" name="word" class="addWordInput" placeholder="Слово" required></label>
-            <label for="definition">Definition <textarea [formControl]="definitionControl" name="definition" id="" cols="30" rows="10"
-                    placeholder="Пояснення" required></textarea></label>
-            <label for="example">Example <textarea [formControl]="exampleControl" name="example" id="" cols="30" rows="10"
-                    placeholder="Приклад"></textarea></label>
-            <label for="tags">List Tag <textarea [formControl]="tagsControl" name="tags" id="" cols="30" rows="10"
-                    placeholder="Теги"></textarea></label>
+            <label for="word" class="titleWord">Назва слова<input [formControl]="wordNameControl" type="text" name="word" class="addWordInput " placeholder="Слово" required></label>
+            <label for="definition" class="titleWord">Значення<textarea [formControl]="definitionControl" name="definition" id="" 
+                    placeholder="" required></textarea></label>
+            <label for="example" class="titleWord">Приклад<textarea [formControl]="exampleControl" name="" id="" 
+                    placeholder=""></textarea></label>
+            <label for="tags" class="titleWord">Теги<textarea [formControl]="tagsControl" name="tags" id="" 
+                    placeholder="Теги вводити через пробіли"></textarea></label>
                     <button class="btn" (click)="createWord()">Створити слово</button>
         </form>
         <app-footer class="f"></app-footer>
