@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ClientApp';
+  
   router: string;
   constructor(public _router: Router) {
 
