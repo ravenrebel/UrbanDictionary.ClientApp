@@ -50,7 +50,7 @@ export class WordService {
     this.words.next(null);
   }
 
-  setSeachedWord(word: string): void {
+  setSearchedWord(word: string): void {
     this.searchedWord.next(word);
   }
 
@@ -88,5 +88,33 @@ export class WordService {
 
   disapproveWord(id: number): Observable<object>{
     return this.http.get(this.globalApi.DISAPPROVE_WORD_URL(id));
+  }
+
+  getSavedWords(): Observable<WordDTO[]>{
+    return this.http.get<WordDTO[]>(this.globalApi.GET_SAVED_WORDS_URL);
+  }
+
+  getCreatedWords(): Observable<WordDTO[]>{
+    return this.http.get<WordDTO[]>(this.globalApi.GET_CREATED_WORDS_URL);
+  }
+
+  saveWord(id: number): Observable<object>{
+    return this.http.post(this.globalApi.SAVE_WORD_URL(id), id);
+  }
+
+  editWord(model: createWordDTO){
+    return this.http.put(this.globalApi.EDIT_WORD_URL, model);
+  }
+
+  deleteSavedWord(id: number) {
+    return this.http.delete(this.globalApi.DELETE_SAVED_WORD_URL(id));
+  }
+
+  deleteCreatedWord(id: number) {
+    return this.http.delete(this.globalApi.DELETE_CREATED_WORD_URL(id));
+  }
+
+  sendToModerator(id: number) {
+    return this.http.post(this.globalApi.SEND_TO_MODERATOR_URL(id), id);
   }
 }
