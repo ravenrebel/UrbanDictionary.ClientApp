@@ -52,4 +52,13 @@ export class LastAddWordsComponent implements OnInit {
       });
     });
   }
+
+  dislike(id): void {
+    this.wordService.dislikeWord(id).subscribe(element => {
+      this.wordService.getLastWords().subscribe(word =>
+      {
+        this.lastWords = word;
+      });
+    });
+  }
 }

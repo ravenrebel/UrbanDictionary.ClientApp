@@ -31,10 +31,12 @@
                         <div class="rateTumbUp rateTumb subtitleWord">{{word.likesCount}}</div>
                     </div>
                     <div class="wordInnerFooterRateItem">
-                        <mat-icon>thumb_down</mat-icon>
-                        <!-- <svg class="iconRate iconRateDown">
-                            <use xlink:href="#tumbDown"></use>
-                        </svg> -->
+                        <button (click)='dislike(word.id);'>
+                            <mat-icon>thumb_down</mat-icon>
+                            <!-- <svg class="iconRate iconRateDown">
+                                <use xlink:href="#tumbDown"></use>
+                            </svg> -->
+                        </button>
                         <div class="rateTumbDown rateTumb subtitleWord">{{word.dislikesCount}}</div>
                     </div>
 
