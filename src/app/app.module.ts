@@ -48,7 +48,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SignInService } from './service/signIn.service';
 import { CurrentUserService } from './service/current-user.service';
-import { AuthentificationGuard } from './guards/AuthentificationGuard';
+import { AuthenticationGuard } from './guards/AuthenticationGuard';
 
 
 @NgModule({
@@ -85,7 +85,7 @@ import { AuthentificationGuard } from './guards/AuthentificationGuard';
     TagListComponent,
     AdminPageComponent,
     ModeratorPageComponent,
- 
+
   ],
   imports: [
     BrowserModule,
@@ -106,7 +106,7 @@ import { AuthentificationGuard } from './guards/AuthentificationGuard';
     GlobalApiService,
     SignInService,
     CurrentUserService,
-    AuthentificationGuard
+    AuthenticationGuard
   ],
   bootstrap: [AppComponent]
 })

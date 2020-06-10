@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  appUrl: 'https://urbandictionary20200425161210.azurewebsites.net/api/'
+  appUrl: 'https://ukrainian-urban-dictionary.herokuapp.com/api/'
 };
 
 /*

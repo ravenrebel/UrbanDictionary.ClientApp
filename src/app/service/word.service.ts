@@ -27,7 +27,7 @@ export class WordService {
   }
 
   getRandom(): Observable<WordDTO[]> {
-    return this.http.get<WordDTO[]>(this.url + '/words/randomWord');
+    return this.http.get<WordDTO[]>(this.globalApi.RANDOM_WORD_URL);
   }
 
   getWords(searchingItem: string, skipNumber: number): Observable<WordDTO[]> {
@@ -39,7 +39,7 @@ export class WordService {
   }
 
   getTopTen(): Observable<WordDTO[]>{
-    return this.http.get<WordDTO[]>(this.globalApi.TOPTEN_URL);
+    return this.http.get<WordDTO[]>(this.globalApi.TOP_TEN_URL);
   }
 
   setWords(words: Array<WordDTO>): void {
@@ -67,11 +67,11 @@ export class WordService {
   }
 
   likeWord(id: number): Observable<object>{
-    return this.http.get(this.globalApi.LIKE_WORD_URL(id));
+    return this.http.post(this.globalApi.LIKE_WORD_URL(id), id);
   }
 
   dislikeWord(id: number): Observable<object>{
-    return this.http.get(this.globalApi.DISLIKE_WORD_URL(id));
+    return this.http.post(this.globalApi.DISLIKE_WORD_URL(id), id);
   }
 
   deleteWord(id: number): Observable<object>{
@@ -83,11 +83,11 @@ export class WordService {
   }
 
   approveWord(id: number): Observable<object>{
-    return this.http.get(this.globalApi.APPROVE_WORD_URL(id));
+    return this.http.post(this.globalApi.APPROVE_WORD_URL(id), id);
   }
 
   disapproveWord(id: number): Observable<object>{
-    return this.http.get(this.globalApi.DISAPPROVE_WORD_URL(id));
+    return this.http.post(this.globalApi.DISAPPROVE_WORD_URL(id), id);
   }
 
   getSavedWords(): Observable<WordDTO[]>{

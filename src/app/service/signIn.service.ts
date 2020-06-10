@@ -16,7 +16,7 @@ export class SignInService {
         private currentUserService: CurrentUserService) {
     }
     signIn(model: SignInDto) {
-        return this.http.post<User>(this.globalService.LOGIN_API, model).pipe(
+        return this.http.post<User>(this.globalService.LOG_IN_API, model).pipe(
             map((user: User) => {
                 if (user) {
                     this.currentUserService.setCurrentUser(user);
@@ -28,10 +28,9 @@ export class SignInService {
     }
 
     signUp(model: SignUpDto) {
-        return this.http.post<User>(this.globalService.SIGNUP_API, model).pipe(
+        return this.http.post<User>(this.globalService.SIGN_UP_API, model).pipe(
             map((user: User) => {
                 if (user) {
-                    debugger
                     this.currentUserService.setCurrentUser(user);
                     return true;
                 } else {
