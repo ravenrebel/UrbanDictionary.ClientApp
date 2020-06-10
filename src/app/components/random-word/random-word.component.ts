@@ -19,7 +19,7 @@ export class RandomWordComponent implements OnInit {
     private wordService: WordService
   ){};
 
-  
+
   ngOnInit(): void {
     this.reload();
 
@@ -32,7 +32,7 @@ export class RandomWordComponent implements OnInit {
         this.randomWords = word;
       });
   }
-  copyMessage(word:WordDTO){
+  copyMessage(word: WordDTO){
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';

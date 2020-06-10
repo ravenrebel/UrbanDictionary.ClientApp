@@ -16,8 +16,8 @@ export class GetStartedMainComponent{
 
   }
   search() {
-    
-    this.wordService.setSeachedWord(this.word);
+
+    this.wordService.setSearchedWord(this.word);
     this.wordService.getWords(this.word, 0)// 0 because it’s first
       .subscribe(result => {
         this.wordService.setWords(result);

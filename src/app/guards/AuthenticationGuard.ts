@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { CurrentUserService } from '../service/current-user.service';
 
 @Injectable()
-export class AuthentificationGuard implements CanActivate {
+export class AuthenticationGuard implements CanActivate {
 
     constructor(private currentUserService: CurrentUserService) {
     }
