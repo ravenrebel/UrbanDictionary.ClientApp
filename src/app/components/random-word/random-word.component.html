@@ -22,7 +22,7 @@
             <footer class="wordInnerFooter">
                 <div class="wordInnerFooterRate">
                     <div class="wordInnerFooterRateItem">
-                        <button (click)='like(word.id);'>
+                        <button (click)='like(randomWord?.id);'>
                             <mat-icon>thumb_up</mat-icon>
                             <!-- <svg class="iconRate iconRateUp">
                                 <use xlink:href="#tumbUp"></use>
@@ -31,7 +31,7 @@
                         <div class="rateTumbUp rateTumb subtitleWord">{{randomWord?.likesCount}}</div>
                     </div>
                     <div class="wordInnerFooterRateItem">
-                        <button (click)='dislike(word.id);'>
+                        <button (click)='dislike(randomWord?.id);'>
                             <mat-icon>thumb_down</mat-icon>
                             <!-- <svg class="iconRate iconRateDown">
                                 <use xlink:href="#tumbDown"></use>
@@ -51,6 +51,6 @@
             </footer>
         </div>
     </div>
-    
+
 </section>
 <button class="btn wordBtnRandomWord" (click)="reload()">Згенерувати рандомні слово</button>

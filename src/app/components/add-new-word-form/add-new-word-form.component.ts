@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './add-new-word-form.component.html',
   styleUrls: ['./add-new-word-form.component.scss']
 })
-export class AddNewWordFormComponent {
+export class AddNewWordFormComponent implements OnInit {
 
   wordNameControl = new FormControl('', [Validators.required]);
   definitionControl = new FormControl('', [Validators.required]);
@@ -19,15 +19,14 @@ export class AddNewWordFormComponent {
   constructor(private wordService: WordService, private router: Router) { }
 
   createWord() {
-    debugger
     if (this.wordNameControl.valid && this.definitionControl.valid) {
-      const createWord = new createWordDTO();
-      createWord.Name = this.wordNameControl.value;
-      createWord.Definition = this.definitionControl.value;
-      createWord.Example = this.exampleControl.value;
-      createWord.Tags = this.tagsControl.value.split(' ');
+      const createdWord: createWordDTO = new createWordDTO();
+      createdWord.Name = this.wordNameControl.value;
+      createdWord.Definition = this.definitionControl.value;
+      createdWord.Example = this.exampleControl.value;
+      createdWord.Tags = this.tagsControl.value.split(' ');
 
-      this.wordService.createNewWord(createWord).subscribe(() => this.router.navigate(['/']));
+      this.wordService.createNewWord(createdWord).subscribe(() => this.router.navigate(['']));
     }
   }
 

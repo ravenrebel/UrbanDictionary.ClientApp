@@ -20,13 +20,12 @@ export class AuthorizationComponent implements OnInit {
   constructor(private signInService: SignInService, private router: Router) { }
 
   ngOnInit(): void {
-    debugger
     $(document).ready(() => {
-      $(".info-item .btn").click(function () {
-        $(".container").toggleClass("log-in");
+      $('.info-item .btn').click(() => {
+        $('.container').toggleClass('log-in');
       });
-      $(".container-form .btn").click(function () {
-        $(".container").addClass("active");
+      $('.container-form .btn').click(() => {
+        $('.container').addClass('active');
       });
     });
   }

@@ -21,7 +21,7 @@ export class TopWordsComponent implements OnInit {
   ngOnInit(): void {
     this.wordService.getTopTen().subscribe((result) => this.words = result);
   }
-  copyMessage(word:WordDTO){
+  copyMessage(word: WordDTO){
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
@@ -37,13 +37,19 @@ export class TopWordsComponent implements OnInit {
 
   like(id): void {
     this.wordService.likeWord(id).subscribe(element => {
-      window.location.reload();
+      this.wordService.getTopTen().subscribe(word =>
+      {
+        this.words = word;
+      });
     });
   }
 
   dislike(id): void {
     this.wordService.dislikeWord(id).subscribe(element => {
-      window.location.reload();
+      this.wordService.getTopTen().subscribe(word =>
+      {
+        this.words = word;
+      });
     });
   }
 

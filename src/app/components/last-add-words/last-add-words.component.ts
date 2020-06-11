@@ -46,19 +46,13 @@ export class LastAddWordsComponent implements OnInit {
 
   like(id): void {
     this.wordService.likeWord(id).subscribe(element => {
-      this.wordService.getLastWords().subscribe(word =>
-      {
-        this.lastWords = word;
-      });
+      this.reload();
     });
   }
 
   dislike(id): void {
     this.wordService.dislikeWord(id).subscribe(element => {
-      this.wordService.getLastWords().subscribe(word =>
-      {
-        this.lastWords = word;
-      });
+      this.reload();
     });
   }
 }
