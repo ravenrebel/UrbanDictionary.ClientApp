@@ -17,7 +17,7 @@ export class RandomWordComponent implements OnInit {
   constructor(
     private router: Router,
     private wordService: WordService
-  ){};
+  ){}
 
 
   ngOnInit(): void {
@@ -48,13 +48,13 @@ export class RandomWordComponent implements OnInit {
 
   like(id): void {
     this.wordService.likeWord(id).subscribe(element => {
-      window.location.reload();
+      this.reload();
     });
   }
 
   dislike(id): void {
     this.wordService.dislikeWord(id).subscribe(element => {
-      window.location.reload();
+      this.reload();
     });
   }
 

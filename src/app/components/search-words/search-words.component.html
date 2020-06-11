@@ -7,26 +7,26 @@
         <table mat-table [dataSource]="dataSource">
             <ng-container matColumnDef="word">
                 <th mat-header-cell *matHeaderCellDef>
-                    <div>Назва слова</div>
+                    <div>Слово</div>
                 </th>
-                <td mat-cell *matCellDef="let word"> {{word.name}} </td>
+                <td mat-cell *matCellDef="let word"> {{word?.name}} </td>
             </ng-container>
             <ng-container matColumnDef="definition">
                 <th mat-header-cell *matHeaderCellDef>
                     <div>Значення</div>
                 </th>
-                <td mat-cell *matCellDef="let word"> {{word.definition}} </td>
+                <td mat-cell *matCellDef="let word"> {{word?.definition}} </td>
             </ng-container>
             <ng-container matColumnDef="example">
                 <th mat-header-cell *matHeaderCellDef>
                     <div>Приклад</div>
                 </th>
-                <td mat-cell *matCellDef="let word"> {{word.example}} </td>
+                <td mat-cell *matCellDef="let word"> {{word?.example}} </td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-        <mat-paginator [length]="words.length" [pageSize]="pageSize" (page)="pageEvents($event)">
+        <mat-paginator [length]="words?.length" [pageSize]="pageSize" (page)="pageEvents($event)">
         </mat-paginator>
         <app-footer class="f"></app-footer>
     </mat-sidenav-content>
